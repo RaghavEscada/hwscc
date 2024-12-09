@@ -112,8 +112,8 @@ const Menu = () => {
               >
                 Clinic Reception ↗
               </a>
-             
-              
+
+
               <a
                 href="#"
                 className="block hover:text-beige transition-colors duration-300"
@@ -148,7 +148,7 @@ const Menu = () => {
                 href="/book-appointment"
                 className="bg-green-500 text-black px-6 py-3 rounded-full hover:bg-green-600 transition-all duration-300 uppercase text-sm tracking-wider font-medium"
               >
-                Book an Appointment
+                Book Appointment
               </Link>
             </div>
           </div>
@@ -157,22 +157,24 @@ const Menu = () => {
 
       {mounted && (
         <>
-          <div className="fixed bottom-4 right-4 bg-black text-beige p-3 rounded-full shadow-lg z-40">
+          <div className="fixed bottom-5 right-6 bg-black text-beige w-12 h-12 rounded-full shadow-lg z-40 flex items-center justify-center">
             <a
               href="tel:+6385751370"
-              className="flex items-center text-beige font-semibold hover:text-white transition-colors duration-300"
+              className="text-beige font-semibold hover:text-white transition-colors duration-300"
             >
-              <FaPhoneAlt className="text-3xl text-green-500" />
+              <FaPhoneAlt className="text-2xl text-green-500" />
             </a>
           </div>
+
+
 
           {!isMenuOpen && (
             <div className="md:hidden fixed bottom-0 left-0 w-full p-4 bg-black text-center border-t border-beige">
               <Link
                 href="/book-appointment"
-                className="bg-green-500 text-black py-3 px-8 rounded-full text-lg font-semibold uppercase shadow-lg hover:bg-green-600 transition-all duration-300 inline-block"
+                className="bg-green-500 text-black py-3 px-8 rounded-full text-pretty text-left text-lg font-semibold uppercase shadow-lg hover:bg-green-600 transition-all duration-300 inline-block"
               >
-              Book an Appointment
+                Book a Call
               </Link>
             </div>
           )}
