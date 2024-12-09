@@ -25,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased`} // Apply the font variables
       >
-        <Menu />
+        <div className="sticky top-0 z-50 bg-white shadow-md">
+          <Menu />
+        </div>
         {children}
       </body>
     </html>
