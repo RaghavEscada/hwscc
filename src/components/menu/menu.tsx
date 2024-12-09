@@ -9,11 +9,10 @@ const menulinks = [
   { path: "/", label: "HOME " },
   { path: "/about", label: "ABOUT " },
   { path: "/services", label: "SERVICES " },
-  { path: "/lab", label: "CLINIC GALLERY " }, // Add superscript here
+  { path: "/lab", label: "CLINIC GALLERY " },
   { path: "/contact", label: "CONTACT " },
   { path: "/bao", label: "RESULTS " },
 ];
-
 
 const Menu = () => {
   const container = useRef(null);
@@ -52,49 +51,78 @@ const Menu = () => {
         <div className="text-lg font-bold">
           <Link href="/">HWSCC</Link>
         </div>
-        <div className="cursor-pointer uppercase text-sm tracking-wider hover:text-beige" onClick={toggleMenu}>
+        <button
+          type="button"
+          className="cursor-pointer uppercase text-sm tracking-wider hover:text-beige"
+          onClick={toggleMenu}
+        >
           {isMenuOpen ? "Close" : "Menu"}
-        </div>
+        </button>
       </div>
 
       <div
         ref={menuRef}
-        className="fixed inset-0 bg-black text-beige z-50 flex flex-col -translate-x-full"
+        className="fixed inset-0 bg-black text-beige z-50 flex flex-col transform -translate-x-full"
       >
-        <div className="flex justify-between items-center p-4 border-b border-black">
+        <div className="flex justify-between items-center p-4 border-b border-beige">
           <div className="text-lg">
             <p className="uppercase text-sm tracking-wider text-beige">HWSCC</p>
           </div>
-          <div className="cursor-pointer uppercase text-sm tracking-wider hover:text-beige transition-colors duration-300" onClick={toggleMenu}>
+          <button
+            type="button"
+            className="cursor-pointer uppercase text-sm tracking-wider hover:text-beige"
+            onClick={toggleMenu}
+          >
             Close &#10005;
-          </div>
+          </button>
         </div>
 
-        <div className="flex-grow flex flex-col justify-center px-8 md:pl-40 lg:pl-96 space-y-2">
+        <nav className="flex-grow flex flex-col justify-center px-8 md:pl-40 lg:pl-96 space-y-2">
           {menulinks.map((link, index) => (
             <div key={index} className="menu-link group">
-              <Link 
-                href={link.path} 
+              <Link
+                href={link.path}
                 onClick={toggleMenu}
                 className="text-4xl md:text-7xl font-bold text-white bg-clip-text hover:bg-gradient-to-t hover:from-rose-500 hover:via-fuchsia-600 hover:to-indigo-700 hover:text-transparent transition-all duration-500 ease-in-out"
->
-
+              >
                 {link.label}
               </Link>
             </div>
           ))}
-        </div>
+        </nav>
 
-        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center text-sm border-t border-e-white">
+        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center text-sm border-t border-beige">
           <div className="space-y-2 mb-4 md:mb-0">
-            <a href="#" className="block hover:text-beige transition-colors duration-300">Clinic Reception ↗</a>
-            <a href="#" className="block hover:text-beige transition-colors duration-300">X ↗</a>
-            <a href="#" className="block hover:text-beige transition-colors duration-300">Instagram ↗</a>
-            <a href="#" className="block hover:text-beige transition-colors duration-300">Facebook ↗</a>
+            <a
+              href="#"
+              className="block hover:text-beige transition-colors duration-300"
+            >
+              Clinic Reception ↗
+            </a>
+            <a
+              href="#"
+              className="block hover:text-beige transition-colors duration-300"
+            >
+              X ↗
+            </a>
+            <a
+              href="#"
+              className="block hover:text-beige transition-colors duration-300"
+            >
+              Instagram ↗
+            </a>
+            <a
+              href="#"
+              className="block hover:text-beige transition-colors duration-300"
+            >
+              Facebook ↗
+            </a>
           </div>
-          
+
           <div className="space-y-2 text-beige">
-            <p className="hover:text-beige transition-colors duration-300">hwscc@gmail.com</p>
+            <p className="hover:text-beige transition-colors duration-300">
+              hwscc@gmail.com
+            </p>
             <a
               href="https://api.whatsapp.com/send?phone=6385751370&text=Hello%20this%20is%20a%20service%20enquiry!"
               target="_blank"
@@ -103,10 +131,9 @@ const Menu = () => {
             >
               <FaPhoneAlt className="inline mr-2 text-green-500" />
               222 445 556
-             
             </a>
           </div>
-          
+
           <div className="hidden md:block">
             <Link
               href="/book-appointment"
@@ -118,23 +145,22 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-4 right-4 bg-black text-beige p-3 rounded-full shadow-lg flex items-center space-x-2 z-40 hover:bg-white transition-colors duration-300">
+      <div className="fixed bottom-4 right-4 bg-black text-beige p-3 rounded-full shadow-lg flex items-center space-x-2 z-40">
         <a
           href="tel:+6385751370"
           className="flex items-center text-beige font-semibold"
         >
-          <FaPhoneAlt className="mr-2 text-3xl text-green-500 hover:text-black" />
-          <span></span>
+          <FaPhoneAlt className="mr-2 text-3xl text-green-500" />
         </a>
       </div>
 
       {!isMenuOpen && (
-        <div className="md:hidden fixed bottom-0 left-0 w-full p-4 bg-black text-center border-t border-black">
+        <div className="md:hidden fixed bottom-0 left-0 w-full p-4 bg-black text-center border-t border-beige">
           <Link
             href="/book-appointment"
             className="bg-green-500 text-black py-3 px-8 rounded-full text-lg font-semibold uppercase shadow-lg hover:bg-green-600 transition-all duration-300 inline-block"
           >
-            <FaPhoneAlt className="inline mr-2 text-black" />  Book Appointment
+            <FaPhoneAlt className="inline mr-2 text-black" /> Book Appointment
           </Link>
         </div>
       )}
