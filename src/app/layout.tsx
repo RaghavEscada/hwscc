@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Merriweather } from "next/font/google"; // Import Google Fonts
+import { Roboto } from "next/font/google"; // Import Google Fonts
 import "./globals.css"; // Make sure your global CSS file is included
 import Menu from "@/components/menu/menu";
 
