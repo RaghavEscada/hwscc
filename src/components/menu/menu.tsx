@@ -6,13 +6,14 @@ import { gsap } from "gsap";
 import { FaPhoneAlt } from 'react-icons/fa';
 
 const menulinks = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
-  { path: "/services", label: "Services" },
-  { path: "/lab", label: "Clinic Gallery" },
-  { path: "/contact", label: "Contact" },
-  { path: "/bao", label: "Results" },
+  { path: "/", label: "HOME " },
+  { path: "/about", label: "ABOUT " },
+  { path: "/services", label: "SERVICES " },
+  { path: "/lab", label: "CLINIC GALLERY " }, // Add superscript here
+  { path: "/contact", label: "CONTACT " },
+  { path: "/bao", label: "RESULTS " },
 ];
+
 
 const Menu = () => {
   const container = useRef(null);
@@ -75,15 +76,16 @@ const Menu = () => {
               <Link 
                 href={link.path} 
                 onClick={toggleMenu}
-                className="text-4xl md:text-7xl font-bold hover:text-red-500"
-              >
+                className="text-4xl md:text-7xl font-bold text-white bg-clip-text hover:bg-gradient-to-t hover:from-rose-500 hover:via-fuchsia-600 hover:to-indigo-700 hover:text-transparent transition-all duration-500 ease-in-out"
+>
+
                 {link.label}
               </Link>
             </div>
           ))}
         </div>
 
-        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center text-sm border-t border-black">
+        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center text-sm border-t border-e-white">
           <div className="space-y-2 mb-4 md:mb-0">
             <a href="#" className="block hover:text-beige transition-colors duration-300">Clinic Reception ↗</a>
             <a href="#" className="block hover:text-beige transition-colors duration-300">X ↗</a>
@@ -116,12 +118,12 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-4 right-4 bg-black text-beige p-3 rounded-full shadow-lg flex items-center space-x-2 z-40 hover:bg-green-500 transition-colors duration-300">
+      <div className="fixed bottom-4 right-4 bg-black text-beige p-3 rounded-full shadow-lg flex items-center space-x-2 z-40 hover:bg-white transition-colors duration-300">
         <a
           href="tel:+6385751370"
           className="flex items-center text-beige font-semibold"
         >
-          <FaPhoneAlt className="mr-2 text-4xl text-green-500" />
+          <FaPhoneAlt className="mr-2 text-3xl text-green-500 hover:text-black" />
           <span></span>
         </a>
       </div>
